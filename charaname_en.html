@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="robots" content="noindex,nofollow">
+	<title>PONOS | Cat Name Search</title>
+	<link rel="stylesheet" href="reset_en.css">
+	<link rel="stylesheet" href="search_en.css">
+  <script type="text/javascript">
+    function setVisible(visible) {
+      var element = document.getElementById("search_btn");
+      element.style.display = visible?"inline":"none";
+      element = document.getElementById("search_btn_off");
+      element.style.display = !visible?"inline":"none";
+    }
+    function onInput(obj) {
+      setVisible(obj.value !== "");
+    }
+  </script>
+</head>
+
+<body>
+
+	<div id="container">
+		<p id="search_tit"><img src="charaname_tit01_en.png" alt=""></p>
+
+
+		<div id="search_block">
+			<form id="search_name" action="ponos-api://function" method="get">
+				<input type="text" name="name" id="name_box" oninput="onInput(this)" autofocus></input>
+        <input type="hidden" name="search" value="1"></input>
+		<input type="image" src="charaname_btn01_en.png" alt="submit" name="submit" id="search_btn" style="display:none;"></input>
+		<input type="image" src="charaname_btn02_en.png" alt="submit" name="submit" id="search_btn_off"></input>
+        </form>
+		</div>
+
+	</div><!-- /container -->
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="robots" content="noindex,nofollow">
+	<title>PONOS | Battle Slot Name Change</title>
+	<link rel="stylesheet" href="reset_en.css">
+	<link rel="stylesheet" href="slotname_en.css">
+	<script type="text/javascript">
+		
+		function setSlotName(str){
+			document.getElementById("name_box").value = decodeURIComponent(str);
+		}
+		function valuEncode(){
+			var input =document.getElementById("name_box").value;
+			
+			window.location.href = "ponos-api://function" + "?name=" + encodeURIComponent(input) ;
+			
+			return false;
+		}
+		
+	</script>
+</head>
+
+<body>
+	
+	<div id="container">
+		<p id="set_tit"><img src="slotname_tit01_en.png" alt=""></p>
+		
+		<div id="set_block">
+			<form id="set_name" name="set_name" action="ponos-api://function" method="get" onsubmit="return valuEncode()">
+				<input type="text" maxlength="10" id="name_box" name="name" autofocus>
+				<input type="image" src="slotname_btn01_en.png" alt="submit" name="submit" id="set_btn">
+			</form>
+			
+			<div id="limit_txt" name="limit_txt">Up to 10 characters</div>
+		</div>
+	
+	</div><!-- /container -->
+</body>
+</html>
